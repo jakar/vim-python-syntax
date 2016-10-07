@@ -565,8 +565,6 @@ if version >= 508 || !exists("did_python_syn_inits")
 
   HiLink pythonExClass          Structure
 
-  HiLink pythonConvention       Define
-
   delcommand HiLink
 endif
 
