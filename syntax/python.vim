@@ -480,6 +480,9 @@ if s:Enabled("g:python_highlight_exceptions")
   syn keyword pythonExClass	ImportWarning UnicodeWarning
 endif
 
+syn keyword pythonConvention    self
+syn keyword pythonConvention    cls
+
 if s:Enabled("g:python_slow_sync")
   syn sync minlines=2000
 else
