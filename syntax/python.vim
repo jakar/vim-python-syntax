@@ -176,7 +176,8 @@ if s:Python2Syntax()
   syn keyword pythonImport      as
   syn match   pythonFunction    "[a-zA-Z_][a-zA-Z0-9_]*" display contained
 else
-  syn keyword pythonStatement   as nonlocal None
+  syn keyword pythonStatement   as nonlocal
+  syn keyword pythonNone        None
   syn match   pythonStatement   "\<yield\s\+from\>" display
   syn keyword pythonBoolean     True False
   syn match   pythonFunction    "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*" display contained
@@ -401,7 +402,7 @@ syn match   pythonFloat		"\<\d\+\.\d*\%([eE][+-]\=\d\+\)\=[jJ]\=" display
 
 if s:Enabled("g:python_highlight_builtin_objs")
   if s:Python2Syntax()
-    syn keyword pythonBuiltinObj	None
+    syn keyword pythonNone	        None
     syn keyword pythonBoolean		True False
   endif
   syn keyword pythonBuiltinObj	Ellipsis NotImplemented
@@ -535,6 +536,7 @@ if version >= 508 || !exists("did_python_syn_inits")
     HiLink pythonUniRawStringMultiline       String
     HiLink pythonUniRawEscape       Special
     HiLink pythonUniRawEscapeError  Error
+    HiLink pythonNone               pythonBuiltinObj
   else
     HiLink pythonBytes              String
     HiLink pythonBytesMultiline              String
@@ -546,6 +548,7 @@ if version >= 508 || !exists("did_python_syn_inits")
     HiLink pythonBytesErrorMultiline         Error
     HiLink pythonBytesEscape        Special
     HiLink pythonBytesEscapeError   Error
+    HiLink pythonNone               pythonStatement
   endif
 
   HiLink pythonStrFormatting    Special
